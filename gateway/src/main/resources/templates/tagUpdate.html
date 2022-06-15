@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" th:action="@{|/project/${projectNum}/tag/${tagNum}/update|}">
+    태그 제목: <input type="text" name="tagTitle" /><br />
+    <input type="submit" value="태그 수정">
+</form>
+</body>
+</html>

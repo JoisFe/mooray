@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" th:action="@{|/project/${projectNum}/task/create/${memberNum}|}">
+    태스크 제목: <input type="text" name="taskTitle" /><br />
+    태스크 내용: <textarea cols="50", rows="20" name="taskContent"></textarea><br />
+    <input type="submit" value="태스크 생성">
+</form>
+</body>
+</html>

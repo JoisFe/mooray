@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+</head>
+<body>
+    <form method="post" action="/login">
+        ID: <input type="text" name="id" /><br />
+        Password: <input type="password" name="pwd" /><br />
+        <input type="submit" value="로그인">
+    </form>
+
+    <h2>깃허브로 로그인하기</h2>
+    <a href="https://github.com/login/oauth/authorize?client_id=8489289d0e3d656ad6f2&redirect_uri=http://localhost:8080/login/oauth2/code/github" class="btn btn-primary pull-right" role="button">깃허브로 로그인</a>
+
+</body>
+</html>

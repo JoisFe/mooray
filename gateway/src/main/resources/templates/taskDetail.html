@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br><br>
+<h1>task 상세페이지</h1>
+<button th:onclick="'location.href=\''+ @{|/project/${projectNum}/task/${task.getTaskNum()}/tag/select|} + '\''">
+    태그 선택
+</button>&nbsp;
+<br>
+<button th:onclick="'location.href=\''+ @{|/project/${projectNum}/task/${task.getTaskNum()}/milestone/select|} + '\''">
+    마일스톤 선택
+</button>&nbsp;
+<br>
+<br>
+<br>
+<h1>해당 태스크의 태그리스트</h1>
+<table>
+    <thead>
+    <tr>
+        <th>태그 제목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="title : ${taskTagTitle}">
+        <td th:text="${title}"></td>
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<h1>해당 태스크의 마일스톤</h1>
+<table>
+    <thead>
+    <tr>
+        <th>마일스톤 제목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${milestoneTitle}"></td>
+
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<h1>해당 task</h1>
+<table>
+    <thead>
+    <tr>
+        <th>업무 번호</th>
+        <th>업무 제목</th>
+        <th>업무 내용</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${task.getTaskNum()}"></td>
+        <td th:text="${task.getTaskTitle()}"></td>
+        <td th:text="${task.getTaskContent()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<br><br>
+
+<h2>댓글 창</h2>
+
+<table>
+    <thread>
+        <th>번호</th>
+        <th>내용</th>
+        <th>작성자 아이디</th>
+        <th>수정</th>
+        <th>삭제</th>
+    </thread>
+    <tbody>
+
+    <tr th:each="comment : ${commentList}">
+        <td><span th:text="${comment.getCommentNum()}"></span></td>
+        <td><span th:text="${comment.getCommentContent()}"></span></td>
+        <td><span th:text="${comment.getWriterId()}"></span></td>
+        <td style="text-decoration: underline;"
+            th:onclick="'location.href=\''+ @{|/project/${projectNum}/task/${task.getTaskNum()}/comment/${comment.getCommentNum()}/update|} + '\''">
+            수정
+        </td>
+        <td style="text-decoration: underline;"
+            th:onclick="'location.href=\''+ @{|/project/${projectNum}/task/${task.getTaskNum()}/comment/${comment.getCommentNum()}/delete|} + '\''">
+            삭제
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form method="post" th:action="@{|/project/${projectNum}/task/${taskNum}/comment|}">
+    댓글: <textarea cols="50", rows="20" name="commentContent" min="1" required></textarea><br />
+    <br />
+    <input type="submit" />
+</form>
+</body>
+
+<script>
+    let message = "[[${message}]]"
+
+    window.onload = function() {
+        if (message !== "") {
+            alert(message);
+        }
+    }
+</script>
+</html>

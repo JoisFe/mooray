@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{|/project/${projectNum}/task/${taskNum}/milestone/select|}">
+    가능한 마일스톤들<br>
+    <div th:each="milestone : ${milestoneList}">
+        <span th:text = "${milestone.getMilestoneTitle()}"></span>
+        <input type='checkbox' name='milestoneNum' th:value='${milestone.getMilestoneNum()}' />
+    </div>
+
+    <input type='submit'>
+</form>
+</body>
+</html>

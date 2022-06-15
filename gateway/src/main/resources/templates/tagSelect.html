@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{|/project/${projectNum}/task/${taskNum}/tag/select|}">
+    가능한 마일스톤들<br>
+    <div th:each="tag : ${tagList}">
+        <span th:text = "${tag.getTagTitle()}"></span>
+        <input type='checkbox' name='tagNum' th:value='${tag.getTagNum()}' />
+    </div>
+
+    <input type='submit'>
+</form>
+</body>
+</html>

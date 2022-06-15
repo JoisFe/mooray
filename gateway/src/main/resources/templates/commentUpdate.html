@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{|/project/${projectNum}/task/${taskNum}/comment/${commentNum}/update|}">
+    댓글 내용 <input type="text" name="commentContent" /><br />
+    <input type="submit" value="댓글 수정">
+</form>
+</body>
+</html>

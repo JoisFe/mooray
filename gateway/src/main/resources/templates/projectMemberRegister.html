@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{|/project/${projectNum}/member/register|}">
+    가능한 멤버들<br>
+    <div th:each="member : ${memberList}">
+        <span th:text = "${member.getMemberId()}"></span>
+        <input type='checkbox' name='memberNum' th:value='${member.getMemberNum()}' />
+    </div>
+
+    <input type='submit'>
+</form>
+</body>
+</html>
