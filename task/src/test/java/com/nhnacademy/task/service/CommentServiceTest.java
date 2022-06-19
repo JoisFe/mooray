@@ -25,7 +25,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 @ExtendWith(MockitoExtension.class)
-@Transactional
 class CommentServiceTest {
     @InjectMocks
     private CommentServiceImpl commentService;
