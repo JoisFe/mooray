@@ -82,11 +82,12 @@ Response code: 200; Time: 178ms; Content length: 112 bytes
 * Task-Api, Project, Task, Comment 의 구조는 다음과 같습니다.
 
 <br>
-![image.png](/files/3292063060031869379)
+<img width="979" alt="image" src="https://user-images.githubusercontent.com/90208100/174468563-ece0fd04-608b-4138-a7fb-5d4588328e9e.png">
+
 <br>
 ## 설계
+<img width="604" alt="image" src="https://user-images.githubusercontent.com/90208100/174468567-71402761-f731-4109-b2ad-786e04eb947f.png">
 
-![image.png](/files/3292063334310589986)
 <br>
 * **gateway 는 모든 서비스 요청을 받으며 프레젠테이션 기능을 담당합니다**.
     * TemplateEngine(<b><span style="color:#e11d21">Thymeleaf</span></b>) 사용하여 화면을 표시합니다.
